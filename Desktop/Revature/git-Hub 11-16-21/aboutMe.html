@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <title>It's a Travesty!</title>
     <link rel="stylesheet" href="styleSheet.css" />
+    <script src="javascriptAdditions.js"></script>
 </head>
 <body>
     <h1>Just a kid with a dream</h1>
+    <div class="introParagraph">
     <p>I am Travis from Orange County. Rock
        N' Roll is near-religious for me. 
        I'm a guitarist, a luthier, a sporadic 
@@ -22,7 +24,7 @@
        I began my journey here by taking some
        computer science courses at Pasadena City
        College.</p>
-
+    </div>
     <p>Some of the cars I would choose for my restoration project are (in no particular order):</p>
     <ul>
         <li>1969 Chevy Chevelle</li>
@@ -31,38 +33,60 @@
         <li>1966 Ford Mustang</li>
         <li>1955 Cadillac DeVille</li>
     </ul>
-
-    <p>My All-Time Top 5 albums would be as follows:</p>
+    <audio id="stonesAudio">
+        <source src="allDownTheLine.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="crowesAudio">
+        <source src="thickNThin.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="oasisAudio">
+        <source src="hello.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="aerosmithAudio">
+        <source src="toysInTheAttic.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="stoneRosesAudio">
+        <source src="sheBangsTheDrums.mp3" type="audio/mpeg">
+    </audio>
+    <div class="albumIntro">
+    <h3>My All-Time Top 5 albums would be as follows:<h3>
+    </div>
     <table>
         <tr>
             <th>Band</th>
             <th>Album</th>
             <th>Year</th>
+            <th>Sound Clip</th>
         </tr>
         <tr>
             <td>1. The Rolling Stones</td>
             <td>Exile On Main Street</td>
             <td>1972</td>
+            <td><button onclick="playStonesAudio()" type="button">Play</button></td>
         </tr>
         <tr>
             <td>2. The Black Crowes</td>
             <td>Shake Your Money Maker</td>
             <td>1990</td>
+            <td><button onclick="playCrowesAudio()" type="button">Play</button></td>
         </tr>
         <tr>
             <td>3. Oasis</td>
             <td>(What's The Story) Morning Glory?</td>
             <td>1995</td>
+            <td><button onclick="playOasisAudio()" type="button">Play</button></td>
         </tr>
         <tr>
             <td>4. Aerosmith</td>
             <td>Toys In The Attic</td>
             <td>1975</td>
+            <td><button onclick="playAerosmithAudio()" type="button">Play</button></td>
         </tr>
         <tr>
-            <td>5. Led Zeppelin</td>
-            <td>Physical Graffiti</td>
-            <td>1975</td>
+            <td>5. The Stone Roses</td>
+            <td>The Stone Roses</td>
+            <td>1987</td>
+            <td><button onclick="playStoneRosesAudio()" type="button">Play</button></td>
         </tr>
     </table>
 
@@ -84,33 +108,59 @@
         <div class = "guitar">
             <p>1. Noel Gallagher's Union Jack Dot-Style</p>
             <img src="https://i.pinimg.com/originals/af/9e/96/af9e962fc534ee0fef5e3434df5d888e.jpg"
-                    alt="Noel Gallagher plays his signature Dot-Style guitar with Union Jack painted on it." height="200px" />
+                    alt="Noel Gallagher plays his signature Dot-Style guitar with Union Jack painted on it." />
         </div>
 
         <div class = "guitar">
             <p>2. Epiphone Flamekat</p>
             <img src="https://reverb-res.cloudinary.com/image/upload/s--pKHSk0pS--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1478454081/bjcfnbe9huc2depunpdh.jpg"
-                    alt="The Epiphone 'Flamekat' model." height="200px" />
+                    alt="The Epiphone 'Flamekat' model." />
         </div> 
         
         <div class = "guitar">
             <p>3. Chuck Berry's Wine Red Gibson double-cut</p>
             <img src="https://www.guitariste.com/share/articles/2017/03/Chuck%20berry%20wine%20red.jpg"
-                    alt="Chuck Berry 'duck-walks' while strumming his wine red double-cut." height="200px" />
+                    alt="Chuck Berry 'duck-walks' while strumming his wine red double-cut." />
         </div>
 
         <div class = "guitar">
             <p>4. Billie Joe Armstrong's "Blue" guitar</p>
             <img src="https://1.bp.blogspot.com/-BdPzceBbBBI/TvMys44IZPI/AAAAAAAABeY/FNzOLl-7HoE/s1600/billiejoesguitar.jpg.w300h477.jpg"
-                    alt="Green Day's Billie Joe Armstrong adorned his Fernandes Strat-copy with stickers." height="200px" />
+                    alt="Green Day's Billie Joe Armstrong adorned his Fernandes Strat-copy with stickers." />
         </div>
 
         <div class = "guitar">
             <p>5. Eddie Van Halen's Frankenstein</p>
             <img src="https://1.bp.blogspot.com/_OM5YyCOEodo/S2EvrlXXxgI/AAAAAAAAALc/2yUVQdxnG0I/s320/eddie_van_halen.jpg"
-                    alt="Eddie Van Halen wails on his mad-scientist's creation." height="200px" />
+                    alt="Eddie Van Halen wails on his mad-scientist's creation." />
         </div>        
     </section>
+    <script>
+    var stones = document.getElementById("stonesAudio");
+    var crowes = document.getElementById("crowesAudio");
+    var oasis = document.getElementById("oasisAudio");
+    var aerosmith = document.getElementById("aerosmithAudio");
+    var stoneRoses = document.getElementById("stoneRosesAudio");
+
+    function displayAlt() {
+        window.alert("HaHa! Made you click!");
+    }
+    function playStonesAudio() {
+        stones.play();
+    }
+    function playCrowesAudio() {
+        crowes.play();
+    }
+    function playOasisAudio() {
+        oasis.play();
+    }
+    function playAerosmithAudio() {
+        aerosmith.play();
+    }
+    function playStoneRosesAudio() {
+        stoneRoses.play();
+    }
+    </script>
 
 
 
